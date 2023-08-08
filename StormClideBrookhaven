@@ -1,0 +1,66 @@
+local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
+local Window = DevTools:Init({
+    Name = "Brookhaven Script", -- Required: Provide a name for the window
+    Title = "StormClide Presents", -- Required: Set the title of the loading screen
+    Subtitle = "by StormClide", -- Required: Add a brief description for the loading screen
+    Icon = "rbxassetid://6031280882", -- Optional: Set an icon for the window
+    LoadingBackgroundImage = "rbxassetid://6031251515", -- Optional: Set a background image for the loading screen
+    Options = {
+        KillYourself = false, -- Optional: Set to true to reset character on launch
+        FOVAnimations = false, -- Optional: Set to true to enable FOV Animations
+    }
+})
+
+
+
+local Tab = Window:CreateTab({Name = "Main Settings", Icon = "rbxassetid://6031289445"})
+
+local Tab = Window:CreateTab({Name = "Home"})
+
+local Tab = Window:CreateTab({Name="Car"})
+
+local Tab = Window:CreateTab({Name="Avatar"})
+
+local Tab = Window:CreateTab({Name="Hubs"})
+
+local Tab = Window:CreateTab({Name="Fun"})
+local Label = Tab:CreateLabel("Walkspeed")
+local Slider = Tab:CreateSlider({
+    Name = "Walkspeed",
+    Suffix = "Speed",
+
+    Range = {16,100},
+    Interval = 1,
+    Default = 16,
+
+    Callback = function(Value)
+        DevTools.Player:SetSpeed(Value)
+    end,
+})
+    local Label = Tab:CreateLabel("JumpPower")
+    local Slider = Tab:CreateSlider({
+        Name = "JumpPower",
+        Suffix = "Studs",
+
+        Range = {16,100},
+        Interval = 1,
+        Default = 16,
+
+        Callback = function(Value)
+            DevTools.Player:SetJumpPower(Value)
+        end,
+    })
+
+    local Label = Tab:CreateLabel("Reset Button")
+local Button = Tab:CreateButton({
+    Name = "Reset",
+    Callback = function()
+        DevTools.Player:Kill()
+    end,
+})
+
+local Tab = Window:CreateTab({Name = "Discord/Support", Icon="rbxassetid://6022668911"})
+
+local Tab = Window:CreateTab({Name="Instant"})
+
+local Tab = Window:CreateTab({Name="All"})
