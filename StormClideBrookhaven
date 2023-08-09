@@ -61,6 +61,8 @@ local Button = Tab:CreateButton({
 
 local Tab = Window:CreateTab({Name = "Discord/Support", Icon="rbxassetid://6022668911"})
 
+local Label = Tab:CreateButton("DISCORD: https://discord.gg/stormclide")
+
 local Tab = Window:CreateTab({Name="Instant"})
 
 local Tab = Window:CreateTab({Name="All"})
